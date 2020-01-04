@@ -1,5 +1,5 @@
 import { readSection } from '../Cache';
-import { Account, AddressBook, Network, WalletId } from 'v2/types';
+import { Account, AddressBook, Network, WalletId, ExtendedAddressBook } from 'v2/types';
 import { WALLETS_CONFIG } from 'v2/config';
 
 export const getAllAddressLabels = (): AddressBook[] => {
@@ -13,8 +13,8 @@ export const getLabelByAddress = (address: string): AddressBook | undefined => {
 
 export const getLabelByAccount = (
   account: Account,
-  addressLabels: AddressBook[]
-): AddressBook | undefined => {
+  addressLabels: ExtendedAddressBook[]
+): ExtendedAddressBook | undefined => {
   return addressLabels.find(
     label =>
       account.address.toLowerCase() === label.address.toLowerCase() &&
