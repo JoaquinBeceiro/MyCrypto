@@ -54,7 +54,9 @@ function renderAccountPanel() {
 }
 
 function renderAddressPanel() {
-  const { createAddressBooks, addressBook, deleteAddressBooks } = useContext(AddressBookContext);
+  const { createAddressBooks, addressBook, deleteAddressBooks, updateAddressBooks } = useContext(
+    AddressBookContext
+  );
   return (
     <FlippablePanel>
       {({ flipped, toggleFlipped }) =>
@@ -64,6 +66,7 @@ function renderAddressPanel() {
           <AddressBookPanel
             addressBook={addressBook}
             toggleFlipped={toggleFlipped}
+            updateAddressBooks={updateAddressBooks}
             deleteAddressBooks={deleteAddressBooks}
           />
         )
